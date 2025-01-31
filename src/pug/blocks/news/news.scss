@@ -1,0 +1,6 @@
+.news {
+  @apply w-full h-full flex gap-5 d:overflow-x-auto no-scrollbar d:gap-4;
+  &__item {
+    @apply flex flex-col relative flex-1 rounded-[1.25rem] p-5 border border-cnpGreyLight min-h-[47rem] d:rounded-[1rem] d:min-w-64 d:p-2 d:min-h-[19.5rem];
+  }
+}

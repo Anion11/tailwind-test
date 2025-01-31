@@ -1,0 +1,22 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageTitle = 'Modals'
+
+block content
+  main
+    .inner
+      +ui-h1(pageTitle)
+      +section
+        +ui-h2('CNP')
+        +ui-button({p4: 'Открыть модалку'})(data-modal-target="center-modal" data-modal-toggle="center-modal")
+        +cnp-modal('center-modal')
+          h4.font-semibold.color-cnpMain.text-5xl.font-cnp.text-center.mb-10(class='d:text-[2rem] d:mb-8 m:text-[1.5rem] m:mb-4') Удалить партнера
+          p.color-cnpMain.text-2xl.font-cnp.text-center.mb-10(class='max-w-[31.5rem] d:text-[1.5rem] d:mb-8 m:text-[1rem] m:mb-4') Вы действительно хотите удалить партнера&nbsp;
+            a.font-semibold(href='mailto:ts@cloudmill.ru') ts@cloudmill.ru
+            |  из проекта
+            a.font-semibold(href='#') Ижевская ТЭЦ-1
+          .flex.gap-5(class='d:gap-4 m:gap-3 m:flex-col-reverse')
+            button.w-64.rounded-2xl.border.border-cnpGreyLight.font-semibold.text-xl.py-7.leading-6.font-cnp.transition(class='d:py-5 m:w-full m:py-3.5 hover:bg-cnpSky hover:text-white' type="button" data-modal-hide='center-modal') Отменить
+            button.w-64.rounded-2xl.bg-cnpSky.text-white.font-semibold.text-xl.py-7.leading-6.font-cnp.transition(class='d:py-5 m:w-full m:py-3.5' type="button" data-modal-hide='center-modal') Да, удалить

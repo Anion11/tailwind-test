@@ -1,0 +1,26 @@
+mixin news(mods)
+  -
+    const baseName = 'news'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .news(class=allMods)&attributes(attributes)
+    -for(let i=0; i<3; i++)
+      .news__item
+        .relative.w-full(class='h-[26.5rem] d:h-[11.5rem]')
+          .absolute.top-5.left-5.text-white.font-cnp.backdrop-blur-xs.py-1.px-3.rounded-xl(class='d:top-2 d:left-2 d:leading-[14px] text-[1rem] d:text-xs d:px-2 bg-white/[0.1]') 18 октября 2023
+          .absolute.bottom-6.left-5.text-white.font-cnp.py-1.px-3.rounded-xl.bg-cnpMain.desktop(class='text-[1rem] d:text-xs rounded-xl') Новости
+          .overflow-hidden.rounded-xl(class='d:rounded-lg').h-full
+            img(src="../../images/fancy_img1.png", alt="").h-full
+        .flex.flex-col.px-10.flex-1.justify-between(class='d:px-2')
+          .mt-10.text-cnpMain.font-bold.text-3xl(class='d:text-[1rem] d:leading-[1.2] d:mt-3') Насосы серии NIS вошли в складскую программу CNP
+          .text-cnpSky.mb-4(class='d:mb-0 d:text-xs text-[1rem]') #выставки
+        a.absolute.bottom-5.right-5.p-3.bg-cnpSky.rounded-xl(href="#" class='d:rounded-lg d:p-2 d:bottom-4 d:right-4')
+          +arrow-right(class='d:w-4 d:h-4')
+    block

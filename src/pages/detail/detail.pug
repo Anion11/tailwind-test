@@ -1,0 +1,33 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'detail'
+    const pageTitle = 'detail'
+
+block content
+  main.pb-28
+    .inner
+      .header.h-20
+      .relative.mb-32(class='d:mb-16')
+        +ui-button-svg(class='d:w-10 d:h-10 d:p-3 d:rounded-lg').absolute.left-0.top-0.desktop
+          +arrow-left(class='d:w-4 d:h-4')
+        a.devices.mb-6.p-2.rounded-xl.border.border-cnpGreyLight.flex.items-center.gap-4.w-fit(href="#")
+          .p-3.bg-cnpSky.rounded-xl(class='d:rounded-lg d:p-2')
+            +arrow-left(class='d:w-4 d:h-4 text-white')
+          .font-cnp.color-cnpMain.font-bold(class="d:text-[1rem]") Назад в пресс-центр
+        .mx-auto(class='max-w-[57rem] d:max-w-full')
+          .mb-6.font-cnp.text-cnpMain.text-5xl.font-bold(class="d:mb-4 d:text-2xl") Итоги выставки EcwaTech
+          .mb-10.flex.gap-4.items-center(class="d:mb-6")
+            .text-white.font-cnp.py-1.px-3.rounded-xl.bg-cnpMain(class='text-[1rem] d:text-xs rounded-xl') Новости
+            .text-cnpMain(class='d:leading-[14px] text-[1rem] d:text-xs') 18 октября 2023
+            .text-cnpSky(class='d:text-xs text-[1rem]') #выставки
+          .mb-10.font-cnp(class="d:mb-6 d:text-[1rem] text-[1.25rem] leading-[1.6]") В середине сентября прошла выставка <a class="underline text-cnpSky" href="#">EcwaTech</a>, которая в 17-ый раз стала международной площадкой для встречи специалистов в области коммунальной и промышленной водоподготовки, водоснабжения, водоотведения и очистки сточных вод. Мы наконец готовы рассказать и показать вам, как это было!
+          .mb-10.rounded-2xl.overflow-hidden(class="d:mb-6 h-[37rem] d:h-auto d:rounded-xl")
+            img(src="../../images/fancy_img1.png", alt="").w-full.h-full
+          .mb-4.font-cnp(class="d:mb-3 d:text-[1rem] text-[1.25rem] leading-[1.6]") Больше фотографий вы можете найти в нашем <a class="underline text-cnpSky" href="#">официальном сообществе ВКонтакте</a>, где мы всегда оперативно публикуем новости компании, фото и видео с наших мероприятий.
+          .mb-4.font-cnp(class="d:mb-3 d:text-[1rem] text-[1.25rem] leading-[1.6]") Неотъемлемой изюминкой наших стендов стало то, что мы всегда готовы вас удивлять! Ecwatech2023 не стал исключением. Впервые на территории РФ нами была представлена модель серии CDM в высокотемпературном исполнении.
+          .mb-4.font-cnp(class="d:mb-3 d:text-[1rem] text-[1.25rem] leading-[1.6]") Помимо этого, мы презентовали установку повышения давления нового поколения, собранную на новом производстве в Подмосковье на базе насосов <a class="underline text-cnpSky" href="#">CDM</a> от компании CNP в паре с автоматикой Aikon. И это еще не всё! Подробнее вы можете узнать в нашем видео.
+          .mb-4.font-cnp(class="d:mb-3 d:text-[1rem] text-[1.25rem] leading-[1.6]") Мы благодарим всех гостей за посещение выставки и нашего стенда! До новых встреч!
+      .mb-6.font-cnp.color-cnpMain.text-2xl.font-bold(class="d:text-[1rem]") Похожие новости
+      +news

@@ -1,0 +1,35 @@
+mixin cnp-modal(id, mods)
+  -
+    const baseName = 'cnp-modal'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .cnp-modal.hidden(class=allMods id=id ? id : 'default-modal' aria-hidden="true")&attributes(attributes)
+    .max-w-3xl.relative(class='d:max-w-[36rem] m:max-w-[22rem] xs:max-w-[20rem]')
+      .relative.p-20.bg-white.rounded-2xl.overflow-auto(class='d:p-16 m:pt-[3.25rem] m:px-4 m:pb-4 max-h-[600px]')
+        block
+      +ui-button-svg(data-modal-hide=id ? id : 'default-modal' class='absolute top-5 right-5 m:top-2 m:right-2')
+        +cnp-modal-close
+
+//- mixin cnp-modal-right(id, mods)
+//-   -
+//-     const baseName = 'cnp-modal'
+//-     let allMods = ''
+//-     if (typeof mods !== 'undefined' && mods) {
+//-       const modsList = mods.split(',')
+//-       for (const element of modsList) {
+//-         allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+//-       }
+//-       allMods = allMods.trim()
+//-     }
+
+//-   .cnp-modal.hidden(class=allMods id=id ? id : 'default-modal' aria-hidden="true")&attributes(attributes)
+//-     .relative.p-4.w-full.max-w-2xl.max-h-full
+//-         .relative.bg-white.rounded-lg.shadow
+//-             block

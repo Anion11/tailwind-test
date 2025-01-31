@@ -1,0 +1,22 @@
+mixin cnp-document(mods)
+  -
+    const baseName = 'cnp-document'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  a.cnp-document(href="#" class=allMods)&attributes(attributes)
+    .flex.justify-between.items-center.h-full
+      .flex.gap-3(class="d:gap-2 d:items-start")
+        .w-14.h-14(class="d:h-10 d:w-10")
+          +file-blank-svg.w-full.h-full
+        .color-cnpGrey.font-cnp(class="d:text-sm text-[1rem]") 1,55 МБ
+      +ui-button-svg(class='d:w-10 d:h-10 d:p-3 d:rounded-lg')
+        +download-svg(class='d:w-4 d:h-4')
+    .color-cnpMain.font-cnp.font-bold.text-xl(class="d:text-sm") Прайс от 20 октября 2023 года
+    block

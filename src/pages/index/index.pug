@@ -1,0 +1,19 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageTitle = 'Index'
+
+block content
+  main
+    .inner
+      +ui-h1(pageTitle)
+      br
+      br
+      a(href='main.html') Карточка (1 задание)
+      br
+      br
+      a(href='detail.html') Страница (2 задание)
+      br
+      br
+      a(href='modals.html') Модалка (3 задание)
